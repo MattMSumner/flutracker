@@ -1,0 +1,10 @@
+<p data-role='description'>This is an app to track flu</p>
+
+<div id='map-canvas' style='height:700px;'></div>
+
+<%= simple_form_for :location, url: search_path, method: :get do |f| %>
+  <%= f.input :query %>
+  <%= f.submit "Am I Safe?" %>
+<% end %>
+
+<%= render 'maps' %>

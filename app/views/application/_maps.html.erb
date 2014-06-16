@@ -1,0 +1,106 @@
+<script type="text/javascript" src=
+  "https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>">
+</script>
+<script type="text/javascript">
+  function initialize() {
+
+    var mapOptions = {
+      center: new google.maps.LatLng(42.356127, -71.061639),
+        zoom: 8
+    };
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"),
+      mapOptions);
+
+    var bostonCoords5 = [
+      new google.maps.LatLng(42.427223, -70.983330),
+      new google.maps.LatLng(42.497127, -71.117913),
+      new google.maps.LatLng(42.371953, -71.269661),
+      new google.maps.LatLng(42.322220, -71.122033),
+      new google.maps.LatLng(42.249579, -71.069848)
+    ]
+
+    var bostonCoords4 = [
+      new google.maps.LatLng(42.427223, -70.983330),
+      new google.maps.LatLng(42.497127, -71.117913),
+      new google.maps.LatLng(42.585156, -71.157738),
+      new google.maps.LatLng(42.663469, -71.019722),
+      new google.maps.LatLng(42.557344, -70.859734)
+    ]
+
+    var bostonCoords3 = [
+      new google.maps.LatLng(42.585156, -71.157738),
+      new google.maps.LatLng(42.497127, -71.117913),
+      new google.maps.LatLng(42.371953, -71.269661),
+      new google.maps.LatLng(42.384127, -71.419350),
+      new google.maps.LatLng(42.525472, -71.265542)
+    ]
+
+    var bostonCoords2 = [
+      new google.maps.LatLng(42.238904, -71.370598),
+      new google.maps.LatLng(42.384127, -71.419350),
+      new google.maps.LatLng(42.371953, -71.269661),
+      new google.maps.LatLng(42.322220, -71.122033),
+      new google.maps.LatLng(42.249579, -71.069848)
+    ]
+
+    var bostonCoords1 = [
+      new google.maps.LatLng(42.238904, -71.370598),
+      new google.maps.LatLng(42.199749, -71.080147),
+      new google.maps.LatLng(42.249579, -71.069848)
+    ]
+
+    var bostonPolygon5 = new google.maps.Polygon({
+      paths: bostonCoords5,
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.35
+    });
+
+    var bostonPolygon4 = new google.maps.Polygon({
+      paths: bostonCoords4,
+      strokeColor: '#FF7A00',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF7A00',
+      fillOpacity: 0.35
+    });
+
+    var bostonPolygon3 = new google.maps.Polygon({
+      paths: bostonCoords3,
+      strokeColor: '#FFF500',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FFF500',
+      fillOpacity: 0.35
+    });
+
+    var bostonPolygon2 = new google.maps.Polygon({
+      paths: bostonCoords2,
+      strokeColor: '#85FF00',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#85FF00',
+      fillOpacity: 0.35
+    });
+
+    var bostonPolygon1 = new google.maps.Polygon({
+      paths: bostonCoords1,
+      strokeColor: '#0AFF00',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#0AFF00',
+      fillOpacity: 0.35
+    });
+
+    bostonPolygon5.setMap(map);
+    bostonPolygon4.setMap(map);
+    bostonPolygon3.setMap(map);
+    bostonPolygon2.setMap(map);
+    bostonPolygon1.setMap(map);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
